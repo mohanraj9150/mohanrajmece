@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mohan Raj M — Electronics and Communication Engineering graduate interested in embedded systems, IoT, PCB design and electronics testing.">
+    <title>Mohan Raj M | Electronics Engineer Portfolio</title>
+    <style>
+        :root {
+            --bg: #080d18;
+            --panel: #101a2b;
+            --text: #edf3ff;
+            --muted: #a8b5ca;
+            --accent: #48d7e8;
+            --line: #24334b
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(circle at 80% 5%, #142b45 0, transparent 30%), var(--bg);
+            color: var(--text);
+            font: 16px/1.65 Inter, Segoe UI, Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(1080px, 90%);
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #080d18eF;
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+            z-index: 5
+        }
+
+        .nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .5px
+        }
+
+        .brand span {
+            color: var(--accent)
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        nav a:hover {
+            color: var(--accent)
+        }
+
+        .hero {
+            padding: 105px 0 90px;
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 50px;
+            align-items: center
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 70px);
+            line-height: 1.05;
+            margin: 14px 0
+        }
+
+        h1 span {
+            color: var(--accent)
+        }
+
+        .lead {
+            font-size: 19px;
+            color: var(--muted);
+            max-width: 650px
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px
+        }
+
+        .btn {
+            padding: 12px 19px;
+            border-radius: 9px;
+            border: 1px solid var(--accent);
+            font-weight: 700
+        }
+
+        .primary {
+            background: var(--accent);
+            color: #06111b
+        }
+
+        .secondary {
+            color: var(--text)
+        }
+
+        .orb {
+            width: min(280px, 70vw);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin: auto;
+            background: linear-gradient(145deg, #1c5269, #10233e 60%, #0b1424);
+            border: 3px solid #48d7e8;
+            box-shadow: 0 0 80px #36cce522;
+            overflow: hidden
+        }
+
+        .orb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            display: block
+        }
+
+        .section {
+            padding: 68px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 0 0 24px
+        }
+
+        .sub {
+            color: var(--muted);
+            max-width: 760px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: linear-gradient(145deg, #111d30, #0d1625);
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            padding: 22px
+        }
+
+        .card h3 {
+            margin: 0 0 8px
+        }
+
+        .card p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .tag {
+            border: 1px solid #31536a;
+            background: #10263a;
+            padding: 8px 13px;
+            border-radius: 99px;
+            color: #c9f5fb;
+            font-size: 14px
+        }
+
+        .project {
+            border-left: 3px solid var(--accent)
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .project-gallery figure {
+            margin: 0;
+        }
+
+        .project-gallery img {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+            background: #080d18;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 6px;
+        }
+
+        .project-gallery figcaption {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .meta {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .contactbox {
+            background: linear-gradient(120deg, #10283b, #111a2b);
+            border: 1px solid #2c5368;
+            border-radius: 18px;
+            padding: 28px
+        }
+
+        .contactbox p {
+            color: var(--muted)
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center
+        }
+
+        @media(max-width:760px) {
+            nav {
+                gap: 11px;
+                font-size: 12px
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 75px 0 60px
+            }
+
+            .orb {
+                grid-row: 1;
+                width: 155px;
+                font-size: 55px
+            }
+
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery img {
+                height: 220px;
+            }
+
+            .section {
+                padding: 52px 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav"><a class="brand" href="#home">MOHAN<span>RAJ.M</span></a>
+            <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a
+                    href="#education">Education</a><a href="#certificates">Certificates</a><a
+                    href="#contact">Contact</a></nav>
+        </div>
+    </header>
+    <main>
+        <section class="wrap hero" id="home">
+            <div>
+                <div class="eyebrow">Electronics & Communication Engineer</div>
+                <h1>Hi, I'm <span>Mohan Raj M</span></h1>
+                <p class="lead">An ECE graduate interested in electronics, embedded systems, IoT, PCB design and
+                    testing. I enjoy learning how hardware and software work together to solve practical problems.</p>
+                <div class="actions"><a class="btn primary" href="#projects">Explore My Work</a><a class="btn secondary"
+                        href="https://www.linkedin.com/in/rtr-mohan-raj-m-2005b22a2" target="_blank"
+                        rel="noopener">LinkedIn Profile ↗</a></div>
+            </div>
+            <div class="orb"><img src="photo.jpg" alt="Mohan Raj M professional profile photo"></div>
+        </section>
+        <section class="section" id="about">
+            <div class="wrap">
+                <div class="eyebrow">A little about me</div>
+                <h2>About Me</h2>
+                <p class="sub">I am an Electronics and Communication Engineering graduate with a strong interest
+                    in electronics hardware, embedded systems, Internet of Things (IoT), PCB design and product
+                    testing. Through my academic projects and internship experience, I have developed an understanding
+                    of electronic circuits, hardware concepts and practical problem-solving. I enjoy exploring how
+                    hardware and software work together to build reliable, real-world solutions. I am eager to begin
+                    my engineering career in an environment where I can apply my knowledge, learn from experienced
+                    professionals and contribute to meaningful technical projects.</p>
+            </div>
+        </section>
+        <section class="section" id="skills">
+            <div class="wrap">
+                <div class="eyebrow">What I work with</div>
+                <h2>Technical Interests & Skills</h2>
+                <div class="tags"><span class="tag">Embedded Systems</span><span class="tag">Internet of Things
+                        (IoT)</span><span class="tag">PCB Design</span><span class="tag">Electronics Testing</span><span
+                        class="tag">Hardware Troubleshooting</span><span class="tag">Industrial Automation</span><span
+                        class="tag">Altium Designer</span><span class="tag">KiCad</span><span class="tag">EasyEDA</span>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="projects">
+            <div class="wrap">
+                <div class="eyebrow">Selected work</div>
+                <h2>Projects</h2>
+                <article class="card project">
+                    <div class="meta">Final-year project · AI + IoT</div>
+                    <h3>Smart Electricity Theft Detection Using AI and IoT</h3>
+                    <p>A project concept combining AI and IoT for electricity usage monitoring, theft detection,
+                        automatic power cut and web-based monitoring. Add your exact hardware components, detection
+                        method, software stack and measured results here before publishing.</p>
+                </article>
+
+                <article class="card project" style="margin-top:18px">
+                    <div class="meta">PCB Design · Electronics Project</div>
+                    <h3>555 Timer-Based Touch Input Buzzer</h3>
+
+                    <div class="project-gallery">
+                        <figure>
+                            <img src="./projects/pcb-555-timer/layout.jpg"
+                                 alt="555 timer touch input buzzer PCB layout">
+                            <figcaption>PCB Layout</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="./projects/pcb-555-timer/schematic.jpg"
+                                 alt="555 timer touch input buzzer circuit schematic">
+                            <figcaption>Circuit Schematic</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="./projects/pcb-555-timer/pcb.jpg"
+                                 alt="Completed 555 timer touch input buzzer PCB design">
+                            <figcaption>Final PCB Design</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        Designed a PCB for a 555 timer-based touch input buzzer.
+                        The project includes circuit schematic preparation, component
+                        placement and PCB layout/routing.
+                    </p>
+
+                    <p style="margin-top:10px">
+                        <strong>Technologies:</strong>
+                        555 Timer IC · PCB Design · Circuit Schematic · Electronics
+                    </p>
+
+                    <a class="project-link"
+                       href="https://www.linkedin.com/in/rtr-mohan-raj-m-2005b22a2"
+                       target="_blank" rel="noopener">
+                        View LinkedIn Profile ↗
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="education">
+            <div class="wrap">
+                <div class="eyebrow">Academic background</div>
+                <h2>Education & Experience</h2>
+                <div class="grid">
+                    <article class="card">
+                        <div class="meta">Education</div>
+                        <h3>B.E. – Electronics and Communication Engineering</h3>
+                        <p>Anna University · R2021 Regulation</p>
+                    </article>
+                    <article class="card">
+                        <div class="meta">Internship</div>
+                        <h3>Schneider Electric</h3>
+                        <p>Three-month internship. Add the exact department, technologies learned and internship dates
+                            to make this section more informative.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="resume">
+            <div class="wrap">
+                <div class="eyebrow">Career profile</div>
+                <h2>My Resume</h2>
+                <div class="card">
+                    <h3>Download My Resume</h3>
+                    <p>View my education, technical skills, internship experience and engineering projects.</p>
+                    <div class="actions">
+                        <a class="btn primary" href="./resume/Mohan_Raj_Resume.pdf" target="_blank" rel="noopener">
+                            View Resume ↗
+                        </a>
+                        <a class="btn secondary" href="./resume/Mohan_Raj_Resume.pdf" download>
+                            Download Resume ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="certificates">
+            <div class="wrap">
+                <div class="eyebrow">Achievements</div>
+                <h2>Certificates</h2>
+                <div class="grid">
+                    <article class="card">
+                        <div class="meta">Internship · Dec 2025 – Jan 2026</div>
+                        <h3>Embedded Systems Internship</h3>
+                        <p>CareerLadder, Hope College, Coimbatore. Completed with 100% attendance.</p>
+                        <p style="margin-top:12px"><a href="certs/embedded-systems-careerladder.pdf" target="_blank"
+                                rel="noopener" style="color:var(--accent);text-decoration:none">View certificate ↗</a>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <div class="meta">Internship · Feb – Mar 2025</div>
+                        <h3>Artificial Intelligence Internship</h3>
+                        <p>NoviTech R&amp;D Pvt. Ltd., Coimbatore. One-month internship. Certificate ID AIIN9046.</p>
+                        <p style="margin-top:12px"><a href="certs/ai-internship-novitech.pdf" target="_blank"
+                                rel="noopener" style="color:var(--accent);text-decoration:none">View certificate ↗</a>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <div class="meta">Internship · Feb – Mar 2025</div>
+                        <h3>Machine Learning Internship</h3>
+                        <p>NoviTech R&amp;D Pvt. Ltd., Coimbatore. One-month internship. Certificate ID MLIN2599.</p>
+                        <p style="margin-top:12px"><a href="certs/ml-internship-novitech.pdf" target="_blank"
+                                rel="noopener" style="color:var(--accent);text-decoration:none">View certificate ↗</a>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <div class="meta">Internship · Feb – Mar 2025</div>
+                        <h3>Data Analytics Internship</h3>
+                        <p>NoviTech R&amp;D Pvt. Ltd., Coimbatore. One-month internship. Certificate ID DAIN6595.</p>
+                        <p style="margin-top:12px"><a href="certs/data-analytics-internship-novitech.pdf"
+                                target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">View
+                                certificate ↗</a></p>
+                    </article>
+                    <article class="card">
+                        <div class="meta">Event · 25–26 March 2025</div>
+                        <h3>Circuit Debugging, ELANTRA 2K25</h3>
+                        <p>Participation certificate from Kangeyam Group of Institutions, Tiruppur.</p>
+                        <p style="margin-top:12px"><a href="certs/circuit-debugging-elantra.pdf" target="_blank"
+                                rel="noopener" style="color:var(--accent);text-decoration:none">View certificate ↗</a>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="eyebrow">Let's connect</div>
+                <h2>Contact</h2>
+                <div class="contactbox">
+                    <h3>Interested in working together?</h3>
+                    <p>I'm open to entry-level opportunities in electronics, testing, embedded systems, IoT and
+                        automation.</p>
+                    <div class="actions"><a class="btn primary"
+                            href="https://www.linkedin.com/in/rtr-mohan-raj-m-2005b22a2" target="_blank"
+                            rel="noopener">Connect on LinkedIn ↗</a><a class="btn secondary"
+                            href="mailto:mohanrajmani9150@gmail.com">Email me</a><a class="btn secondary"
+                            href="https://wa.me/919150286814" target="_blank" rel="noopener">WhatsApp ↗</a><a
+                            class="btn secondary" href="tel:+919150286814">Call me</a></div>
+                    <p style="font-size:12px">Email: mohanrajmani9150@gmail.com<br>Phone: +91 91502 86814</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>© <span id="year"></span> Mohan Raj M · Personal Portfolio</footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+
+</html>
